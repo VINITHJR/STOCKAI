@@ -1,0 +1,6 @@
+fold_number,training_end_date,training_observations,first_training_date,last_training_date,vix_training_q75,threshold_method
+1,2025-01-13,120,2024-07-23,2025-01-13,14.719999999999999,75th percentile of preceding 120 training-session VIX closes; no validation observations used
+2,2025-04-11,120,2024-10-18,2025-04-11,15.425,75th percentile of preceding 120 training-session VIX closes; no validation observations used
+3,2025-07-10,120,2025-01-16,2025-07-10,16.9675,75th percentile of preceding 120 training-session VIX closes; no validation observations used
+4,2025-10-08,120,2025-04-17,2025-10-08,15.575,75th percentile of preceding 120 training-session VIX closes; no validation observations used
+5,2026-01-05,120,2025-07-14,2026-01-05,11.9625,75th percentile of preceding 120 training-session VIX closes; no validation observations used

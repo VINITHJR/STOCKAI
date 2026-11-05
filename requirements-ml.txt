@@ -1,0 +1,11 @@
+# StockAI ML component pins.
+# These are a component subset, not a complete backend environment.
+# For a reproducible installation, use the root requirements.txt.
+
+tensorflow==2.15.1
+keras==2.15.0
+numpy==1.26.4
+pandas==3.0.6
+scikit-learn==1.9.0
+scipy==1.17.1
+h5py==3.16.0

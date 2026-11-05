@@ -1,0 +1,144 @@
+# ==============================
+# Secrets and environment files
+# ==============================
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# ==============================
+# Python
+# ==============================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+.eggs/
+build/
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# ==============================
+# Node / React / Vite
+# ==============================
+node_modules/
+dist/
+dist-ssr/
+*.local
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# ==============================
+# IDE / OS
+# ==============================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ==============================
+# Logs and temporary files
+# ==============================
+*.log
+*.tmp
+*.bak
+*.backup
+*.swp
+*.swo
+
+# ==============================
+# Local databases and caches
+# ==============================
+*.sqlite
+*.sqlite3
+*.db
+backend/app/backtest/movers_cache.json
+
+# ==============================
+# Experimental ML artifacts
+# ==============================
+backend/app/ml/models/backups/
+backend/app/ml/models/candidates/
+backend/app/ml/models/research/
+
+# Ignore model directory contents by default.
+# Explicitly allow only the selected production artifacts.
+backend/app/ml/models/*
+!backend/app/ml/models/lstm_model_v2.keras
+!backend/app/ml/models/lstm_scalers_v2.pkl
+!backend/app/ml/models/rf_trend_model.pkl
+
+# ==============================
+# StockAI development utilities
+# ==============================
+StockAI_Safe_Cleanup_Tool/
+stockai_safe_cleanup.py
+
+# ==============================
+# Archive folders
+# ==============================
+StockAI_Archive_*/
+
+# ==============================
+# Generated market-data caches
+# ==============================
+backend/data/historical_cache/
+backend/app/services/movers_cache.json
+
+# ==============================
+# Temporary and failed source files
+# ==============================
+*.failed_current
+*.backup_*
+*.backup_before_*
+
+# ==============================
+# Phase 15 reports: publish only the approved Part 4.3 run
+# ==============================
+backend/app/ml/phase15/reports/*
+!backend/app/ml/phase15/reports/phase15_part4_3_20261102_072010_portfolio_risk_metrics.csv
+!backend/app/ml/phase15/reports/phase15_part4_3_20261102_072010_daily_risk_series.csv
+!backend/app/ml/phase15/reports/phase15_part4_3_20261102_072010_drawdown_episodes.csv
+!backend/app/ml/phase15/reports/phase15_part4_3_20261102_072010_fixed_quantity_anchor_reconciliation.csv
+!backend/app/ml/phase15/reports/phase15_part4_3_20261102_072010_fold_calendar_risk.csv
+!backend/app/ml/phase15/reports/phase15_part4_3_20261102_072010_fold_trade_attribution.csv
+!backend/app/ml/phase15/reports/phase15_part4_3_20261102_072010_market_regime_calendar.csv
+!backend/app/ml/phase15/reports/phase15_part4_3_20261102_072010_market_regime_exposure.csv
+!backend/app/ml/phase15/reports/phase15_part4_3_20261102_072010_market_regime_trade_performance.csv
+!backend/app/ml/phase15/reports/phase15_part4_3_20261102_072010_prediction_reliability_history.csv
+!backend/app/ml/phase15/reports/phase15_part4_3_20261102_072010_reliability_exposure.csv
+!backend/app/ml/phase15/reports/phase15_part4_3_20261102_072010_reliability_exposure_comparison.csv
+!backend/app/ml/phase15/reports/phase15_part4_3_20261102_072010_source_metric_reconciliation.csv
+!backend/app/ml/phase15/reports/phase15_part4_3_20261102_072010_stock_risk_concentration.csv
+!backend/app/ml/phase15/reports/phase15_part4_3_20261102_072010_vix_thresholds.csv
+!backend/app/ml/phase15/reports/phase15_part4_3_20261102_072010_summary.json
+
+# Local release-preparation backups
+.release_backups/
+
+# Local LSTM post-cutoff diagnostic; not part of the public release
+backend/app/ml/lstm_v2_saved_artifact_holdout_eval.py
+
+# Experimental LSTM research candidates - excluded from initial public release
+/backend/app/ml/lstm_model_before_fix.py
+/backend/app/ml/*v3_candidate*.py
+/backend/app/ml/*v4_candidate*.py
+
+# Duplicate Phase 15 frontend page
+/frontend/src/pages/Phase15RiskStabilityPage_FIXED_20261103.tsx
+
+# Local installation helper, not part of the frontend runtime
+/frontend/src/pages/install_phase15_page.py

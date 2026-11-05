@@ -1,0 +1,9 @@
+portfolio,model,slippage_bps_per_side,weak_state_average_exposure_pct,positive_state_average_exposure_pct,weak_minus_positive_exposure_pp,diagnostic_only,note
+extra_trees_top5,extra_trees,0.0,64.58470995557123,70.00453459175782,-5.41982463618659,True,Exposure comparison is descriptive; state is derived only from prior matured OOF ranking outcomes.
+extra_trees_top5,extra_trees,5.0,64.58470995557126,70.00453459175785,-5.41982463618659,True,Exposure comparison is descriptive; state is derived only from prior matured OOF ranking outcomes.
+extra_trees_top5,extra_trees,10.0,64.58470995557123,70.00453459175782,-5.41982463618659,True,Exposure comparison is descriptive; state is derived only from prior matured OOF ranking outcomes.
+extra_trees_top5,extra_trees,20.0,64.58470995557123,70.00453459175782,-5.41982463618659,True,Exposure comparison is descriptive; state is derived only from prior matured OOF ranking outcomes.
+random_forest_top5,random_forest,0.0,66.71783165469519,70.63845709181888,-3.9206254371236895,True,Exposure comparison is descriptive; state is derived only from prior matured OOF ranking outcomes.
+random_forest_top5,random_forest,5.0,66.7178316546952,70.63845709181889,-3.9206254371236895,True,Exposure comparison is descriptive; state is derived only from prior matured OOF ranking outcomes.
+random_forest_top5,random_forest,10.0,66.71783165469519,70.63845709181888,-3.9206254371236895,True,Exposure comparison is descriptive; state is derived only from prior matured OOF ranking outcomes.
+random_forest_top5,random_forest,20.0,66.71783165469519,70.63845709181889,-3.9206254371237037,True,Exposure comparison is descriptive; state is derived only from prior matured OOF ranking outcomes.

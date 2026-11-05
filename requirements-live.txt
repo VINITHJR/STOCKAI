@@ -1,0 +1,5 @@
+# StockAI live-market integration component.
+# This is a component subset, not a complete backend environment.
+# For a reproducible installation, use the root requirements.txt.
+
+upstox-python-sdk==2.30.0

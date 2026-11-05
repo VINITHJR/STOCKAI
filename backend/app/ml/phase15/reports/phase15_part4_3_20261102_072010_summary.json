@@ -1,0 +1,108 @@
+{
+  "run_id": "20261102_072010",
+  "phase": 15,
+  "part": "4.3",
+  "title": "Risk, Drawdown, Portfolio Stability and Market-Regime Assessment",
+  "research_only": true,
+  "source_runs": {
+    "part4_2_2": "20261101_140850",
+    "part3_daily_discrimination": "20261031_145936",
+    "part2_daily_market_context": "20261031_144125",
+    "part3_5_regime_sample_sizes": "20261031_153835"
+  },
+  "portfolios": [
+    "extra_trees_top5",
+    "random_forest_top5",
+    "equal_weight_20_integer_redistributed"
+  ],
+  "slippage_scenarios_bps_per_side": [
+    0.0,
+    5.0,
+    10.0,
+    20.0
+  ],
+  "risk_metrics": [
+    "net return and CAGR",
+    "annualized volatility",
+    "Sharpe and Sortino (zero risk-free rate)",
+    "maximum drawdown",
+    "drawdown episode and recovery duration",
+    "Ulcer Index",
+    "daily 5th/1st percentile and CVaR",
+    "exposure and time above exposure thresholds"
+  ],
+  "fold_methodology": {
+    "trade_attribution": "Full stock-leg P&L assigned to the fold of its signal date.",
+    "calendar_risk": "Daily mark-to-market dates inherit the most recent validation-fold label; overlapping positions can originate in prior folds."
+  },
+  "market_regime_methodology": {
+    "nifty_trend_and_market_risk": "Existing Part 3 daily discrimination labels, joined by signal date.",
+    "elevated_vix": "India VIX close > fold-specific 75th percentile computed from the 120 sessions strictly before each validation start; threshold is frozen per fold.",
+    "trade_attribution": "Full seven-session trade P&L attributed to market regime on the signal date.",
+    "daily_exposure": "Daily exposure associated with the same-date regime; exit-tail dates without a validation signal regime are excluded from regime exposure summaries."
+  },
+  "prediction_reliability_methodology": {
+    "models": {
+      "extra_trees_top5": "extra_trees",
+      "random_forest_top5": "random_forest"
+    },
+    "metric_inputs": [
+      "cross_sectional_spearman_ic",
+      "top_minus_bottom_actual_return"
+    ],
+    "lookback_matured_signal_dates": 20,
+    "maturity_lag_sessions": 7,
+    "positive_state": "Both trailing 20-matured-date mean IC and mean top-bottom realised spread are > 0.",
+    "weak_state": "Both trailing 20-matured-date mean IC and mean top-bottom realised spread are <= 0.",
+    "mixed_state": "The two trailing measures have different signs.",
+    "insufficient_history": "Fewer than 20 matured observations available.",
+    "important_limitation": "This is a past-only historical ranking-quality proxy, not model confidence, a calibrated probability, or a validated position-sizing rule. It does not alter historical exposure."
+  },
+  "holdout": {
+    "final_holdout_start": "2026-04-17",
+    "final_holdout_used": false,
+    "maximum_part4_2_2_date": "2026-04-16",
+    "vix_thresholds_use_only_pre_validation_training_data": true
+  },
+  "models_fitted": false,
+  "predictions_modified": false,
+  "hyperparameters_changed": false,
+  "upstox_api_called": false,
+  "source_reports_modified": false,
+  "protected_artifact_count": 11,
+  "protected_artifacts_modified": false,
+  "source_fingerprints_unchanged": true,
+  "part4_2_2_trade_source_reconciliation": {
+    "fixed_quantity_20bps_anchor_matches": true,
+    "trade_counts_match_portfolio_metrics": true,
+    "net_pnl_matches_ending_equity": true,
+    "gross_net_cost_ledger_reconciles": true
+  },
+  "limitations": [
+    "This is descriptive analysis of previously reviewed out-of-fold predictions and fixed-quantity historical replays, not independent final-holdout evidence.",
+    "Seven-session target returns overlap; fold and market-regime groups are dependent and descriptive. No new significance tests or multiple-testing adjustment are applied.",
+    "Drawdowns and tail metrics are based on simulated daily liquidation equity under the specified fee/slippage assumptions.",
+    "Daily OHLC cannot reproduce order-book depth, partial fills, market impact, auction execution, corporate actions or dividends.",
+    "Signal-origin regime attribution assigns each complete seven-session trade to its entry signal's regime; the market may change during the holding period.",
+    "The trailing reliability state is retrospective monitoring research. It must not be used as a live risk gate without a separately frozen and forward-tested policy.",
+    "NIFTY and VIX regime definitions are inherited or reconstructed from the earlier Phase 15 regime methodology; small groups are flagged descriptive-only."
+  ],
+  "reports": {
+    "portfolio_risk_metrics": "phase15_part4_3_20261102_072010_portfolio_risk_metrics.csv",
+    "daily_risk_series": "phase15_part4_3_20261102_072010_daily_risk_series.csv",
+    "drawdown_episodes": "phase15_part4_3_20261102_072010_drawdown_episodes.csv",
+    "stock_risk_concentration": "phase15_part4_3_20261102_072010_stock_risk_concentration.csv",
+    "fold_trade_attribution": "phase15_part4_3_20261102_072010_fold_trade_attribution.csv",
+    "fold_calendar_risk": "phase15_part4_3_20261102_072010_fold_calendar_risk.csv",
+    "market_regime_trade_performance": "phase15_part4_3_20261102_072010_market_regime_trade_performance.csv",
+    "market_regime_exposure": "phase15_part4_3_20261102_072010_market_regime_exposure.csv",
+    "prediction_reliability_history": "phase15_part4_3_20261102_072010_prediction_reliability_history.csv",
+    "reliability_exposure": "phase15_part4_3_20261102_072010_reliability_exposure.csv",
+    "reliability_exposure_comparison": "phase15_part4_3_20261102_072010_reliability_exposure_comparison.csv",
+    "vix_thresholds": "phase15_part4_3_20261102_072010_vix_thresholds.csv",
+    "market_regime_calendar": "phase15_part4_3_20261102_072010_market_regime_calendar.csv",
+    "source_metric_reconciliation": "phase15_part4_3_20261102_072010_source_metric_reconciliation.csv",
+    "fixed_quantity_anchor_reconciliation": "phase15_part4_3_20261102_072010_fixed_quantity_anchor_reconciliation.csv",
+    "summary": "phase15_part4_3_20261102_072010_summary.json"
+  }
+}

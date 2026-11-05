@@ -1,0 +1,29 @@
+{
+  "profile_name": "Upstox NSE equity delivery - date-effective diagnostic schedule",
+  "broker_name": "Upstox (assumed; verify against account contract notes)",
+  "exchange": "NSE",
+  "effective_change_date": "2026-03-01",
+  "brokerage_per_order_inr": 20.0,
+  "stt_buy_bps": 10.0,
+  "stt_sell_bps": 10.0,
+  "stamp_duty_buy_bps": 1.5,
+  "exchange_transaction_inr_per_crore_before_2026_03_01": 297.0,
+  "ipft_inr_per_crore_before_2026_03_01": 10.0,
+  "exchange_transaction_inr_per_crore_from_2026_03_01": 306.99,
+  "ipft_inr_per_crore_from_2026_03_01": 0.01,
+  "sebi_fee_inr_per_crore": 10.0,
+  "dp_charge_per_scrip_per_sell_day_inr": 20.0,
+  "gst_rate": 0.18,
+  "max_adv_participation": 0.01,
+  "slippage_scenarios_bps_per_side": [0.0, 5.0, 10.0, 20.0],
+  "sources": {
+    "upstox_brokerage_charges": "https://upstox.com/brokerage-charges/",
+    "nse_circular_2026_02_27": "https://nsearchives.nseindia.com/content/circulars/FA73061.pdf"
+  },
+  "notes": [
+    "Before 2026-03-01: NSE cash-market transaction charges Rs 297/crore each side plus IPFT Rs 10/crore each side.",
+    "From 2026-03-01: NSE cash-market transaction charges Rs 306.99/crore each side plus IPFT Rs 0.01/crore each side.",
+    "GST is calculated on brokerage, exchange transaction charges, DP charges and IPFT charges; STT, stamp duty and SEBI fee are excluded from the GST base.",
+    "All values are a tariff model; actual contract-note rounding, broker plans and any applicable account-specific rates must be checked."
+  ]
+}
